@@ -20,9 +20,14 @@ public class ContagemMoedas extends CountMoney{
 
     }
 
-    private Double GeneralTotalMoedas(){
-        this.totalMoedas = getTotal005()+getTotal010()+getTotal025()+getTotal0100();
-        return totalMoedas;
+    public void generalTotalMoedas(){
+        double temp = 0;
+        temp += getTotal005();
+        temp += getTotal010();
+        temp += getTotal025();
+        temp += getTotal0100();
+        setTotalMoedas(temp);
+
     }
 
 
@@ -30,24 +35,28 @@ public class ContagemMoedas extends CountMoney{
 
 
     public void countFive(Integer valor){
-        this.total005 = fiveCents*valor;
+       setTotal005(this.fiveCents*valor);
 
     }
     public void countTen(Integer valor){
-        this.total010 = tenCents*valor;
+
+        setTotal010(this.tenCents*valor);
 
     }
 
     public void countTwentyFive(Integer valor){
-        this.total025 = twentyFiveCents*valor;
+
+        setTotal025(this.twentyFiveCents*valor);
 
     }
     public void countFifty(Integer valor){
-        this.total050 = fiftyCents*valor;
+
+        setTotal050(this.fiftyCents*valor);
 
     }
     public void countOne(Integer valor){
-        this.total0100 = OneReal*valor;
+
+        setTotal0100(this.OneReal*valor);
 
     }
 
@@ -92,6 +101,11 @@ public class ContagemMoedas extends CountMoney{
     }
 
     public Double getTotalMoedas() {
+
         return totalMoedas;
+    }
+
+    public void setTotalMoedas(Double totalMoedas) {
+        this.totalMoedas = totalMoedas;
     }
 }

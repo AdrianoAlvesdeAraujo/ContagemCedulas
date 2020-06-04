@@ -6,22 +6,33 @@ public class Main {
         ContagemCedulas cc = new ContagemCedulas("AC");
         GeneralCount gc = new GeneralCount();
         //Pela manhã
-        contagem.countFive(100);
-        contagem.countTen(100);
-        contagem.countTwentyFive(100);
-        contagem.countFifty(100);
-        contagem.countOne(100);
+        contagem.countFive(35);
+        contagem.countTen(25);
+        contagem.countTwentyFive(30);
+        contagem.countFifty(95);
+        contagem.countOne(90);
 
-        cc.countTwoR(100);
-        cc.countFiveR(100);
+        cc.countTwoR(144);
+        cc.countFiveR(110);
+        cc.countTenR(97);
         cc.countTwentyFiveR(100);
-        cc.countFiftyR(100);
-        cc.countOneHundredR(100);
+        cc.countFiftyR(60);
+        cc.countOneHundredR(20);
+        cc.generalCountCedulas();
+        contagem.generalTotalMoedas();
 
-        System.out.println(cc.GeneralCountCedulas());
-        System.out.println(contagem.getTotalMoedas());
-        Double total = cc.getTotalCedulas()+contagem.getTotalMoedas();
-        System.out.println(total);
+        Double totalM = contagem.getTotalMoedas();
+        Double totalC = cc.getTotalCedulas();
+
+        System.out.println("Total de Cédulas R$"+totalC);
+        System.out.println("Total de Moedas: R$"+totalM);
+        Double totalG =totalM + totalC;
+
+        System.err.println("Total Geral: R$"+totalG);
+
+
+
+        //System.out.println(gc.getTotalGeral());
 
 
 
