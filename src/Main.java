@@ -1,38 +1,43 @@
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        ContagemMoedas contagem = new ContagemMoedas("AC");
-        ContagemCedulas cc = new ContagemCedulas("AC");
-        GeneralCount gc = new GeneralCount();
-        //Pela manhã
-        contagem.countFive(35);
-        contagem.countTen(25);
-        contagem.countTwentyFive(30);
-        contagem.countFifty(95);
-        contagem.countOne(90);
-
-        cc.countTwoR(144);
-        cc.countFiveR(110);
-        cc.countTenR(97);
-        cc.countTwentyFiveR(100);
-        cc.countFiftyR(60);
-        cc.countOneHundredR(20);
-        cc.generalCountCedulas();
-        contagem.generalTotalMoedas();
-
-        Double totalM = contagem.getTotalMoedas();
-        Double totalC = cc.getTotalCedulas();
-
-        System.out.println("Total de Cédulas R$"+totalC);
-        System.out.println("Total de Moedas: R$"+totalM);
-        Double totalG =totalM + totalC;
-
-        System.err.println("Total Geral: R$"+totalG);
+        ContagemMoedas moedas = new ContagemMoedas("AC");
+        ContagemCedulas cedulas = new ContagemCedulas("AC");
 
 
 
-        //System.out.println(gc.getTotalGeral());
+        moedas.addCount(0.05,100);
+        moedas.addCount(0.10, 100);
+        moedas.addCount(0.25,100);
+        moedas.addCount(0.50,100);
+        moedas.addCount(1.00,100);
+
+
+
+        cedulas.addCount(2.0, 150);
+        cedulas.addCount(5.0, 100);
+        cedulas.addCount(10.0, 100);
+        cedulas.addCount(20.0, 100);
+        cedulas.addCount(50.0, 50);
+        cedulas.addCount(100.0, 30);
+
+        System.out.println("A Lista total de moedas ::"+moedas.getMoeda());
+        System.out.println("A Lista total de cédulas ::"+cedulas.getCedulas());
+        System.out.println("Valor total em cédulas ::"+cedulas.countTotalCedulas());
+        System.out.println("Valor total em moedas ::"+moedas.countTotalMoedas());
+        double valor=cedulas.countTotalCedulas();
+        double valores=moedas.countTotalMoedas();
+        double total = valor+valores;
+        System.out.println("Valor total ::"+total);
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public abstract class CountMoney {
+public class CountMoney {
 
 
         private String event;
